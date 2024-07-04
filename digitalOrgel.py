@@ -4,6 +4,12 @@ import numpy as np
 import makeSound
 from scipy.io import wavfile
 
+#用いる楽譜データのファイルパスを入力(例:EMOTION.json)
+path = "./EMOTION.json"
+
+#出力する音楽ファイルの名前を入力(例:EMOTION)
+songname = "EMOTION"
+
 #jsonファイルの読み込み
 json_songData = open("./EMOTION.json","r")
 songData = json.load(json_songData)
@@ -61,8 +67,8 @@ for part in songData["parts"]:
 
     s = part["partName"] + " processed."
     print(s)
-        
 
+#wavファイルに出力する
 for n in range(length_of_array):
     array[n] = (array[n] + 1) / 2 * 65536
     array[n] = int(array[n] + 0.5)
@@ -71,4 +77,5 @@ for n in range(length_of_array):
     elif array[n] < 0:
         array[n] = 0
     array[n] -= 32768
-wavfile.write("EMOTION.wav",fs,array.astype(np.int16))
+file = songname + ".wav"
+wavfile.write(file,fs,array.astype(np.int16))
