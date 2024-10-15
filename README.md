@@ -10,6 +10,11 @@ jsonで記述した楽譜データを元に、音楽を生成するpythonのソ�
 2. 音楽生成を、波形の数式を記述するとこから始めている(Drumsの音源もpythonで生成した)
 3. 一般的な楽譜で書きづらいリズムも表現できる(各音符の始点を数字で記述するから)
 4. 任意の周波数の波形を生成できる(frequencies.jsonを編集することによって)
+## 使用例
+〇EMOTION.wav  
+EMOTION.jsonのデータをdigitalOrgel.pyに入力した際に出力された音声データです  
+以下のリンクから試聴することも出来ます  
+https://drive.google.com/file/d/119XmY5yf-PfvYFY4grUMJlMHQ539Bf75/view?usp=sharing
 ## 使い方
 1. DigitalOrgel.pyの8行目の変数pathに、生成したい音楽の楽譜データファイル(json)のパスを書く。
 2. DigitalOrgel.pyの11行目の変数songnameに、生成する音声ファイルの名前を書く。
